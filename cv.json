@@ -1,0 +1,450 @@
+{
+  "basics": {
+    "name": "Leander Bråten",
+    "label": "IT Operations Apprentice",
+    "image": "/me_avatar.jpg",
+    "email": "leander.braten.contact@gmail.com",
+    "phone": "",
+    "url": "https://lbraten.github.io",
+    "summary": "IT apprentice focused on hands-on troubleshooting and support. Comfortable in Linux and virtualized setups, with growing experience in Windows Server and AD. Curious by default, reliable when it counts, and aiming toward incident response or SOC work.",
+    "theme": "int",
+    "location": {
+      "address": "",
+      "postalCode": "0",
+      "city": "Oslo",
+      "countryCode": "NO",
+      "region": "Norway"
+    },
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "username": "leanderbraaten",
+        "url": "https://www.linkedin.com/in/leanderbraaten/"
+      },
+      {
+        "network": "Instagram",
+        "username": "leanderbraaten",
+        "url": "https://www.instagram.com/leanderbraaten/"
+      },
+      {
+        "network": "GitHub",
+        "username": "lbraten",
+        "url": "https://github.com/lbraten"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "Utdanningsdirektoratet",
+      "position": "IT Operations Apprentice",
+      "location_type": "On site • 5 months",
+      "location": "Oslo, Norway",
+      "url": "https://www.udir.no",
+      "startDate": "2025-08-19",
+      "endDate": null,
+      "summary": "A proactive technical support professional with experience in system administration, AI tool development, and event technology management. Currently enhancing cloud expertise through Microsoft Azure certification (AZ-900).",
+      "highlights": [
+        "Driving AI innovation in education.",
+        "Preparing for Microsoft Azure certification (AZ-900)."
+        
+      ],
+      "responsibilities": [
+        "Manage technical infrastructure for events and conferences.",
+        "Support AI-driven research and development initiatives.",
+        "Provide system administration and operational support."
+      ],
+      "achievements": [
+        "Delivered technical support for national exams and large-scale events.",
+        "Developed AI tools to streamline research reporting."
+      ],
+      "skills": [
+        "React",
+        "Jira",
+        "Azure",
+        "Copilot Studio",
+        "AI Foundry",
+        "Scrum"
+      ]
+    },
+    {
+      "name": "Intility",
+      "position": "IT Operations Intern",
+      "location_type": "On site • 6 months",
+      "location": "Oslo, Norway",
+      "url": "https://intility.com",
+      "startDate": "2024-10-23",
+      "endDate": "2025-04-23",
+      "summary": "Completed an extended internship at Intility, working across multiple IT departments. Gained hands-on experience in operations and security, and successfully passed a challenging mock certification exam involving domain controllers and Active Directory.",
+      "skills": [
+        "Citrix Workspace",
+        "Cisco VPN",
+        "Microsoft Intune",
+        "Windows Server"
+      ]
+    },
+    {
+      "name": "Biltema",
+      "position": "Sales Associate",
+      "location_type": "On site • 1 year",
+      "location": "Oslo, Norway",
+      "startDate": "2024-04-01",
+      "endDate": "2025-03-01",
+      "summary": "Gained customer service experience and developed communication skills.",
+      "highlights": [
+        ""
+      ],
+      "skills": [
+        "",
+        ""
+      ]
+    },
+        {
+      "name": "Strømmen VGS",
+      "position": "IT Operations Intern",
+      "location_type": "On site • One week",
+      "location": "Strømmen, Norway",
+      "startDate": "2024-03-01",
+      "endDate": "2024-03-05",
+      "summary": "I helped students and teachers with IT issues, fixed printers, installed software, and more. It gave me solid insight into the school’s IT systems.",
+      "highlights": [
+        ""
+      ],
+      "skills": [
+        "",
+        ""
+      ]
+    },
+        {
+      "name": "Hurtigrutemuseet",
+      "position": "Café Assistant",
+      "location_type": "On site • 6 months",
+      "location": "Stokmarknes, Norway",
+      "startDate": "2022-05-01",
+      "endDate": "2022-10-01",
+      "summary": "Provided customer service and managed daily operations.",
+      "highlights": [
+        ""
+      ],
+      "skills": [
+        "",
+        ""
+      ]
+    },
+        {
+      "name": "Hadsel VGS",
+      "position": "IT Operations Intern",
+      "location_type": "On site  • One week",
+      "location": "Stokmarknes, Norway",
+      "startDate": "2021-06-01",
+      "endDate": "2021-06-05",
+      "summary": "Interned in the school's IT department. I learned to reinstall PCs, choose and install required software, and supported various IT issues.",
+      "highlights": [
+        ""
+      ],
+      "skills": [
+        "",
+        ""
+      ]
+    }
+  ],
+  
+  "education": [
+        {
+      "institution": "Utdanningsdirektoratet",
+      "url": "https://www.udir.no",
+      "area": "IT Operations • Apprenticeship • VG3",
+      "studyType": "VG2",
+      "startDate": "2025-08-19",
+      "endDate": "2027-08-19",
+      "score": "",
+      "courses": [
+        "",
+        ""
+      ]
+    },
+    {
+      "institution": "Fyrstikkalleen Skole - F21",
+      "url": "https://f21.vgs.no",
+      "area": "Information Technology • VG2",
+      "studyType": "VG2",
+      "startDate": "2024-08-19",
+      "endDate": "2025-06-22",
+      "score": "",
+      "courses": [
+        "",
+        ""
+      ]
+    },
+    {
+      "institution": "Fyrstikkalleen Skole - F21",
+      "url": "https://f21.vgs.no",
+      "area": "Information Technology and Media Production (IM)  • VG1",
+      "studyType": "VG1",
+      "startDate": "2023-08-19",
+      "endDate": "2024-06-22",
+      "score": "",
+      "courses": [
+        "",
+        ""
+      ]
+    }
+  ],
+  "certificates": [
+    {
+      "name": "AZ-900 (Not completed yet)",
+      "date": "2026-05-01",
+      "issuer": "Microsoft Certified: Azure Fundamentals",
+      "url": "https://learn.microsoft.com/en-us/credentials/certifications/azure-fundamentals/?practice-assessment-type=certification"
+    }
+  ],
+
+  "skills": [
+    {
+      "name": "Figma",
+      "level": "",
+      "keywords": [
+        "Design",
+        "UI"
+      ]
+    },
+    {
+      "name": "HTML",
+      "level": "",
+      "keywords": [
+        "Web Development",
+        "Frontend"
+      ]
+    },
+    {
+      "name": "CSS",
+      "level": "",
+      "keywords": [
+        "Web Development",
+        "Frontend",
+        "Responsive Design"
+      ]
+    },
+    {
+      "name": "JavaScript",
+      "level": "",
+      "keywords": [
+        "Web Development",
+        "Frontend",
+        "Backend",
+        "Fullstack"
+      ]
+    },
+    {
+      "name": "TypeScript",
+      "level": "",
+      "keywords": [
+        "Web Development",
+        "Frontend",
+        "Backend",
+        "JavaScript Superset"
+      ]
+    },
+    {
+      "name": "Node",
+      "level": "",
+      "keywords": [
+        "Web Development",
+        "Backend",
+        "JavaScript",
+        "Server"
+      ]
+    },
+    {
+      "name": "MySQL",
+      "level": "",
+      "keywords": [
+        "Databases",
+        "SQL",
+        "Data Storage",
+        "Backend"
+      ]
+    },
+        {
+      "name": "Jira",
+      "level": "",
+      "keywords": [
+        "Support",
+        "Tickets",
+        "Kanban"
+      ]
+    },
+            {
+      "name": "Confluence",
+      "level": "",
+      "keywords": [
+        "Documentation",
+        "FAQ",
+        "Kanban"
+      ]
+    },
+        {
+      "name": "Azure",
+      "level": "",
+      "keywords": [
+        "Cloud-driven",
+        "Scalable",
+        "Enterprise-ready"
+      ]
+    },
+    {
+      "name": "Git",
+      "level": "",
+      "keywords": [
+        "Version Control",
+        "Collaboration",
+        "Source Code"
+      ]
+    },
+    {
+      "name": "GitHub",
+      "level": "",
+      "keywords": [
+        "Version Control",
+        "Collaboration",
+        "Source Code",
+        "Git"
+      ]
+    },
+    {
+      "name": "Next.js",
+      "level": "",
+      "keywords": [
+        "Web Development",
+        "Frontend",
+        "React Framework",
+        "SSR",
+        "Static Generation"
+      ]
+    },
+    {
+      "name": "React",
+      "level": "",
+      "keywords": [
+        "Web Development",
+        "Frontend",
+        "JavaScript Library",
+        "UI"
+      ]
+    },
+    {
+      "name": "Premiere",
+      "level": "",
+      "keywords": [
+        "",
+        "",
+        "",
+        "UI"
+      ]
+    },
+    {
+      "name": "Photoshop",
+      "level": "",
+      "keywords": [
+        "",
+        "",
+        "",
+        "UI"
+      ]
+    },
+    {
+      "name": "Illustrator",
+      "level": "",
+      "keywords": [
+        "",
+        "",
+        "",
+        "UI"
+      ]
+    },
+      {
+      "name": "Tailwind",
+      "level": "",
+      "keywords": [
+        "",
+        "",
+        "",
+        "UI"
+      ]
+    }
+  ],
+  "languages": [
+    {
+      "language": "Norwegian",
+      "fluency": "Native speaker"
+    },
+    {
+      "language": "English",
+      "fluency": "Intermediate"
+    }
+  ],
+  "interests": [
+    {
+      "name": "Technology",
+      "keywords": [
+        "AI",
+        "Blockchain"
+      ]
+    }
+  ],
+  "references": [
+    {
+      "name": "",
+      "reference": ""
+    }
+  ],
+  "projects": [
+    {
+      "name": "The Component Expert",
+      "isActive": true,
+      "description": "An interactive learning platform designed to help users understand computer components and how they work together. It offers clear explanations, visual interaction, and a quiz to reinforce knowledge.",
+      "highlights": [
+        "Interactive component images with zoom feature",
+        "Includes a quiz for knowledge reinforcement",
+        "Simple navigation for easy exploration"
+      ],
+      "url": "https://lbraten.github.io/Komponenteksperten/",
+      "github": "https://github.com/lbraten/Komponenteksperten"
+    },
+    {
+      "name": "AltKalkis",
+      "isActive": true,
+      "description": "An interactive platform designed to help users calculate things quick and easy.",
+      "highlights": [
+        "Buildt inn calculator.",
+        "Age and time between dates.",
+        "'This day's history."
+      ],
+      "url": "https://lbraten.github.io/Alt-i-ett-Kalkulator/",
+      "github": "https://github.com/lbraten/Alt-i-ett-Kalkulator"
+    },
+    {
+      "name": "Scam Detective",
+      "isActive": true,
+      "description": "An interactive platform that helps users understand scams and avoid becoming victims. It offers concise summaries of common scams, explains how they work, and includes a podcast with practical tips for staying safe.",
+      "highlights": [
+        "Collapsing header when scrolling.",
+        "Dark/Light mode with localstorage.",
+        "A button to actually report a scam."
+      ],
+      "url": "https://lbraten.github.io/Scam-Detective_website/",
+      "github": "https://github.com/lbraten/Scam-Detective_website/"
+    },
+        {
+      "name": "The Waffle Stand",
+      "isActive": true,
+      "description": "A simple click-based waffle-shop simulator where you make waffles, set your prices, and try to keep customers from dipping the moment the numbers get too high. It’s all about managing your cash, juggling upgrades, and keeping the shop running without going broke.",
+      "highlights": [
+        "Dynamic pricing that affects your chances of actually selling anything.",
+        "Upgrade system that boosts how many waffles you can produce at once.",
+        "Real-time notifications that react to every sale, fail, and vibe shift in your shop."
+      ],
+      "url": "https://lbraten.github.io/Vaffelboden-spill/",
+      "github": "https://github.com/lbraten/Vaffelboden-spill/"
+    }
+  ]
+}
