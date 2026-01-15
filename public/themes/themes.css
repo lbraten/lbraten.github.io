@@ -58,7 +58,7 @@
 
       /* Bakgrunn og paneler */
       --color-fill: 248, 249, 252;         /* bakgrunn (svært lys, litt blålig) */
-      --muted: 225, 230, 240;              /* borders / cards / historikklinje */
+      --muted: 184, 168, 210;              /* borders / cards / historikklinje */
 
       /* Aksenter (samme som dark) */
       --color: 175, 129, 255;              /* aksent */
@@ -70,15 +70,15 @@
       --bg-gradient:
         /* Lilla glød top-right */
         radial-gradient(60% 60% at 80% 25%,
-          rgba(189, 150, 255, 0.22) 0%,
-          rgba(189, 150, 255, 0.10) 35%,
-          rgba(189, 150, 255, 0.00) 70%)
+          rgba(212, 187, 255, 0.92) 10%,
+          rgba(189, 150, 255, 0.40) 35%,
+          rgba(189, 150, 255, 0.10) 70%)
         ,
         /* Blå glød top-left */
         radial-gradient(55% 55% at 15% 10%,
-          rgba(80, 140, 255, 0.18) 0%,
-          rgba(80, 140, 255, 0.08) 28%,
-          rgba(80, 140, 255, 0.00) 55%)
+          rgba(173, 202, 255, 0.98) 0%,
+          rgba(80, 140, 255, 0.08) 68%,
+          rgba(80, 140, 255, 0.00) 95%)
         ,
         /* Svak skygge i bunn for dybde */
         radial-gradient(65% 55% at 20% 100%,
@@ -89,7 +89,7 @@
         rgb(var(--color-fill)); /* base */
 
       --color-bg-elevated: 255, 255, 255;          /* kort/paneler */
-      --color-bg-input: 241, 241, 241;             /* inputs/selects */
+      --color-bg-input: 255, 255, 255;             /* inputs/selects */
       --color-border: 189, 150, 255;
       --color-ring: 189, 150, 255;
       --color-ring-muted: 189, 150, 255;
