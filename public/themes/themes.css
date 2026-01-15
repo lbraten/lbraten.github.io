@@ -194,12 +194,24 @@
 
 }
 
-/* Gradient-bakgrunn KUN for dark + lond – legg denne ETTER .dark-blokka */
+/* legg helt nederst i themes.css */
 html.dark[data-theme="lond"],
 html.dark[data-theme="lond"] body {
-  background-color: rgb(var(--color-fill)); /* fallback */
-  background-image: linear-gradient(180deg, #0055ff 0%, #ff0000 100%);
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-color: rgb(var(--color-fill)) !important; /* fallback */
+  background-image: linear-gradient(180deg, #0055ff 0%, #ff0000 100%) !important;
+  background-attachment: fixed !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+}
+
+/* legg helt nederst i themes.css */
+@layer utilities {
+  /* Gradient kun når dark + lond */
+  html.dark[data-theme="lond"] .app-bg {
+    background-color: rgb(var(--color-fill)); /* fallback */
+    background-image: linear-gradient(180deg, #0055ff 0%, #ff0000 100%);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
 }
