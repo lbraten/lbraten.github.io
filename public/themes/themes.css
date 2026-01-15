@@ -88,6 +88,12 @@
         ,
         rgb(var(--color-fill)); /* base */
 
+      --color-bg-elevated: 8, 14, 24;          /* kort/paneler */
+      --color-bg-input: 8, 14, 24;             /* inputs/selects */
+      --color-border: 189, 150, 255;
+      --color-ring: 189, 150, 255;
+      --color-ring-muted: 189, 150, 255;
+
     }
     [data-theme="cyber"] {
       --color-text-base: 15, 15, 15;
@@ -211,6 +217,12 @@
           rgba(27, 45, 75, 0.00) 72%)
         ,
         rgb(var(--color-fill)); /* base */
+
+      --color-bg-elevated: 8, 14, 24;          /* kort/paneler */
+      --color-bg-input: 8, 14, 24;             /* inputs/selects */
+      --color-border: 189, 150, 255;
+      --color-ring: 189, 150, 255;
+      --color-ring-muted: 189, 150, 255;
 
     }
     [data-theme="cyber"] {
