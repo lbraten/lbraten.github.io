@@ -10,6 +10,13 @@
     --color-button-accent: 249, 115, 22;
     --color-button-accent-hover: 55, 55, 55;
     --color-button-muted: 244, 239, 238;
+
+    --color-bg-elevated: 8, 14, 24;          /* kort/paneler */
+    --color-bg-input: 8, 14, 24;             /* inputs/selects */
+    --color-border: 189, 150, 255;
+    --color-ring: 189, 150, 255;
+    --color-ring-muted: 189, 150, 255;
+    
     [data-theme="blue"] {
       --color-text-base: 15, 23, 42;
       --color-text-muted: 100, 116, 139;
@@ -80,6 +87,7 @@
           rgba(0, 0, 0, 0.00) 70%)
         ,
         rgb(var(--color-fill)); /* base */
+
     }
     [data-theme="cyber"] {
       --color-text-base: 15, 15, 15;
@@ -122,7 +130,7 @@
     }
   }
   .dark {
-    --color-text-base: 255, 255, 255;
+    --color-text-base: 255, 255, 255; 
     --color-text-muted: 150, 150, 150;
     --color-text-inverted: 255, 255, 255;
     --color-fill: 18, 18, 18;
@@ -171,7 +179,7 @@
       --color-text-inverted: 11, 18, 32; /* Hover farge på knapper */
 
       --color-fill: 11, 18, 32; /* bakgrunnsfarge */
-      --muted: 40, 56, 72; /* historikklinja og border til proskjektboksene */
+      --muted: 97, 84, 117; /* historikklinja og border til proskjektboksene */
 
       --color: 189, 150, 255; /* accentfarge */
       --color-button-accent: 189, 150, 255; /* fyllfargen til knapper, og til baren nederst på skjermen */
