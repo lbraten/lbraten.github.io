@@ -193,11 +193,13 @@
     }
 
 }
-/* Gradient-bakgrunn KUN for dark + lond */
-.dark[data-theme="lond"] body {
-  /* fallback hvis gradient ikke støttes */
-  background-color: rgb(var(--color-fill));
-  /* gradient */
+
+/* Gradient-bakgrunn KUN for dark + lond – legg denne ETTER .dark-blokka */
+html.dark[data-theme="lond"],
+html.dark[data-theme="lond"] body {
+  background-color: rgb(var(--color-fill)); /* fallback */
   background-image: linear-gradient(180deg, #0055ff 0%, #ff0000 100%);
-  background-attachment: fixed; /* fin scroll-effekt, valgfritt */
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
