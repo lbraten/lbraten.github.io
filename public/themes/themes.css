@@ -45,17 +45,37 @@
     }
 
     [data-theme="lond"] {
-      --color-text-base: 20, 24, 33;
-      --color-text-muted: 110, 118, 129;
-      --color-text-inverted: 255, 255, 255;
+      --color-text-base: 20, 24, 33; /* overskrift tekstfarge */
+      --color-text-muted: 110, 118, 129; /* tekstfarge grå */
+      --color-text-inverted: 255, 255, 255; /* Hover farge på knapper */
 
-      --color-fill: 246, 248, 250;   /* bakgrunn */
-      --muted: 225, 228, 232;
+      --color-fill: 246, 248, 250;   /* bakgrunnsfarge */
+      --muted: 225, 228, 232;      /* historikklinja og border til proskjektboksene */
 
-      --color: 34, 197, 94;
-      --color-button-accent: 34, 197, 94;
-      --color-button-accent-hover: 22, 163, 74;
-      --color-button-muted: 232, 244, 236;
+      --color: 34, 197, 94; /* accentfarge */
+      --color-button-accent: 34, 197, 94; /* fyllfargen til knapper, og til baren nederst på skjermen */
+      --color-button-accent-hover: 22, 163, 74;   /* hover farge på knapper */
+      --color-button-muted: 232, 244, 236; /* proskjektboksene */
+
+
+      --bg-gradient:
+        radial-gradient(60% 60% at 0% 0%,
+          rgba(219, 234, 254, 0.65) 0%,
+          rgba(219, 234, 254, 0.28) 45%,
+          rgba(219, 234, 254, 0.0) 70%)
+        ,
+        radial-gradient(60% 60% at 100% 0%,
+          rgba(204, 251, 241, 0.60) 0%,
+          rgba(204, 251, 241, 0.26) 45%,
+          rgba(204, 251, 241, 0.0) 70%)
+        ,
+        radial-gradient(70% 60% at 50% 100%,
+          rgba(220, 252, 231, 0.65) 0%,
+          rgba(220, 252, 231, 0.28) 45%,
+          rgba(220, 252, 231, 0.0) 75%)
+        ,
+        rgb(var(--color-fill)); /* base */
+
     }
     [data-theme="cyber"] {
       --color-text-base: 15, 15, 15;
@@ -142,17 +162,35 @@
     }
 
     [data-theme="lond"] {
-      --color-text-base: 240, 244, 255;
-      --color-text-muted: 148, 163, 184;
-      --color-text-inverted: 11, 18, 32;
+      --color-text-base: 240, 244, 255; /* overskrift tekstfarge */
+      --color-text-muted: 148, 163, 184; /* tekstfarge grå */
+      --color-text-inverted: 11, 18, 32; /* Hover farge på knapper */
 
-      --color-fill: 11, 18, 32; 
-      --muted: 32, 44, 54;
+      --color-fill: 11, 18, 32; /* bakgrunnsfarge */
+      --muted: 32, 44, 54; /* historikklinja og border til proskjektboksene */
 
-      --color: 34, 197, 94;
-      --color-button-accent: 34, 197, 94;
-      --color-button-accent-hover: 22, 163, 74;
-      --color-button-muted: 18, 28, 40;
+      --color: 34, 197, 94; /* accentfarge */
+      --color-button-accent: 34, 197, 94; /* fyllfargen til knapper, og til baren nederst på skjermen */
+      --color-button-accent-hover: 22, 163, 74; /* hover farge på knapper */
+      --color-button-muted: 18, 28, 40; /* proskjektboksene */
+
+      --bg-gradient:
+        radial-gradient(60% 60% at 0% 0%,
+          rgba(14, 165, 233, 0.18) 0%,
+          rgba(14, 165, 233, 0.10) 40%,
+          rgba(14, 165, 233, 0.00) 70%)
+        ,
+        radial-gradient(60% 60% at 100% 0%,
+          rgba(34, 197, 94, 0.20) 0%,
+          rgba(34, 197, 94, 0.10) 40%,
+          rgba(34, 197, 94, 0.00) 70%)
+        ,
+        radial-gradient(70% 60% at 50% 100%,
+          rgba(56, 189, 248, 0.16) 0%,
+          rgba(56, 189, 248, 0.08) 45%,
+          rgba(56, 189, 248, 0.00) 75%)
+        ,
+        rgb(var(--color-fill)); /* base */
     }
     [data-theme="cyber"] {
       --color-text-base: 252, 255, 64;
@@ -191,27 +229,17 @@
       --color-button-accent-hover: 255, 0, 0; /* idk really */
       --color-button-muted: 15, 33, 51; /* proskjektboksene int */
     }
-
+}
 }
 
-/* legg helt nederst i themes.css */
-html.dark[data-theme="lond"],
-html.dark[data-theme="lond"] body {
-  background-color: rgb(var(--color-fill)) !important; /* fallback */
-  background-image: linear-gradient(180deg, #0055ff 0%, #ff0000 100%) !important;
-  background-attachment: fixed !important;
-  background-repeat: no-repeat !important;
-  background-size: cover !important;
-}
 
-/* legg helt nederst i themes.css */
-@layer utilities {
-  /* Gradient kun når dark + lond */
-  html.dark[data-theme="lond"] .app-bg {
-    background-color: rgb(var(--color-fill)); /* fallback */
-    background-image: linear-gradient(180deg, #0055ff 0%, #ff0000 100%);
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
+.bg-tri-bg {
+  background: var(--bg-gradient);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.bg-tri {
+  background: var(--bg-gradient);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
