@@ -88,8 +88,8 @@
         ,
         rgb(var(--color-fill)); /* base */
 
-      --color-bg-elevated: 8, 14, 24;          /* kort/paneler */
-      --color-bg-input: 8, 14, 24;             /* inputs/selects */
+      --color-bg-elevated: 255, 255, 255;          /* kort/paneler */
+      --color-bg-input: 241, 241, 241;             /* inputs/selects */
       --color-border: 189, 150, 255;
       --color-ring: 189, 150, 255;
       --color-ring-muted: 189, 150, 255;
