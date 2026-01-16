@@ -18,6 +18,19 @@
     --color-border: 189, 150, 255;
     --color-ring: 189, 150, 255;
     --color-ring-muted: 189, 150, 255;
+
+
+    /* Defaults (fallback for alle tema) */
+    --glass-blur: 24px;
+    --glass-sat: 10%;
+    --glass-brightness: 1.12;
+    --glass-contrast: 1.08;
+
+    /* Dette er glassets "tint" (ikke panel-fargen) */
+    --glass-tint: 255 255 255;      /* lys glass */
+    --glass-bg-alpha: 0.14;         /* lav = mer transparent */
+    --glass-border-alpha: 0.28;
+    --glass-highlight: 0.18;
     
     [data-theme="blue"] {
       --color-text-base: 15, 23, 42;
@@ -95,12 +108,6 @@
       --color-border: 189, 150, 255;
       --color-ring: 189, 150, 255;
       --color-ring-muted: 189, 150, 255;
-
-      /* blur bokser*/
-    --glass-blur: 16px;
-    --glass-sat: 140%;
-    --glass-bg-alpha: 0.35;
-    --glass-border-alpha: 0.18;
   }
 
     }
@@ -234,10 +241,13 @@
       --color-ring-muted: 189, 150, 255;
 
       /* blur bokser*/
-      --glass-blur: 16px;
-      --glass-sat: 140%;
-      --glass-bg-alpha: 0.22;
+
+      --glass-bg-alpha: 0.1;
       --glass-border-alpha: 0.22;
+      --glass-highlight: 0.1;
+      --glass-brightness: 1.18;
+      --glass-contrast: 1.12;
+      --glass-blur: 2px;
 
     }
     [data-theme="cyber"] {
@@ -291,46 +301,80 @@
 }
 
 
+
 @layer components {
   .glass-card {
-    /* Halvtransparent panel */
-    background-color: rgb(var(--color-bg-elevated) / var(--glass-bg-alpha));
-    border: 1px solid rgb(var(--color-border) / var(--glass-border-alpha));
-    border-radius: 0.375rem; /* tilsvarer rounded-md */
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
-
-    /* Glass-effekten */
-    -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-sat));
-    backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-sat));
-
-    /* Viktig for “glass” */
-    background-clip: padding-box;
     position: relative;
     overflow: hidden;
+    border-radius: 0.375rem; /* rounded-md */
+    background-clip: padding-box;
+
+    /* 1) Selve glassflaten: lys tint + lav alpha */
+    background:
+      linear-gradient(
+        135deg,
+        rgba(255, 255, 255, var(--glass-highlight)) 0%,
+        rgba(255, 255, 255, 0.06) 35%,
+        rgba(255, 255, 255, 0.02) 100%
+      ),
+      rgb(var(--glass-tint) / var(--glass-bg-alpha));
+
+    /* 2) Kant: både vanlig border + subtil "inner edge" via inset shadow */
+    border: 1px solid rgb(255 255 255 / var(--glass-border-alpha));
+    box-shadow:
+      0 10px 35px rgba(0, 0, 0, 0.18),
+      inset 0 1px 0 rgba(255, 255, 255, 0.22),
+      inset 0 -1px 0 rgba(0, 0, 0, 0.18);
+
+    /* 3) Backdrop filter: blur + sat + brightness + contrast = mye mer glass */
+    -webkit-backdrop-filter: blur(var(--glass-blur))
+      saturate(var(--glass-sat))
+      brightness(var(--glass-brightness))
+      contrast(var(--glass-contrast));
+    backdrop-filter: blur(var(--glass-blur))
+      saturate(var(--glass-sat))
+      brightness(var(--glass-brightness))
+      contrast(var(--glass-contrast));
   }
 
-  /* Shine/highlight */
+  /* Ekstra "specular highlight" (refleks) */
   .glass-card::before {
     content: "";
     position: absolute;
-    inset: 0;
+    inset: -2px;
     pointer-events: none;
-    background: linear-gradient(
-      135deg,
-      rgba(255, 255, 255, 0.22),
-      rgba(255, 255, 255, 0.05),
-      rgba(255, 255, 255, 0)
-    );
+    background:
+      radial-gradient(120% 80% at 10% 0%,
+        rgba(255, 255, 255, 0.22) 0%,
+        rgba(255, 255, 255, 0.10) 35%,
+        rgba(255, 255, 255, 0) 70%);
     opacity: 0.9;
   }
 
-  /* Optional: litt “grain” for premium glass */
+  /* Subtil "grain" + ekstra dybde */
   .glass-card::after {
     content: "";
     position: absolute;
     inset: 0;
     pointer-events: none;
-    opacity: 0.08;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='.35'/%3E%3C/svg%3E");
+
+    background:
+      /* litt mørk vignette nederst for dybde */
+      radial-gradient(120% 90% at 50% 100%,
+        rgba(0, 0, 0, 0.18) 0%,
+        rgba(0, 0, 0, 0.00) 55%),
+      /* grain */
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='.28'/%3E%3C/svg%3E");
+
+    opacity: 0.06; /* øk til 0.10 om du vil se grain mer */
+    mix-blend-mode: overlay;
+  }
+
+  /* Optional: hover som føles "glass" */
+  .glass-card:hover {
+    box-shadow:
+      0 14px 45px rgba(0, 0, 0, 0.22),
+      inset 0 1px 0 rgba(255, 255, 255, 0.28),
+      inset 0 -1px 0 rgba(0, 0, 0, 0.20);
   }
 }
