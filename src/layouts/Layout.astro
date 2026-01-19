@@ -122,6 +122,30 @@ const { image, summary, url, theme } = basics;
 				article {
 					break-inside: avoid;
 				}
+
+				html,
+				body {
+					background: #ffffff !important;
+				}
+
+				body {
+					-webkit-print-color-adjust: exact;
+					print-color-adjust: exact;
+				}
+
+				main {
+					padding: 0 !important;
+					gap: 0.75rem !important;
+				}
+
+				main > div {
+					display: block !important;
+				}
+
+				section {
+					break-inside: avoid;
+					page-break-inside: avoid;
+				}
 			}
 		</style>
 	</body>

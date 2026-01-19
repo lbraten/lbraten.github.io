@@ -37,10 +37,15 @@ const { name, label } = basics;
 <style>
 	@page {
 		size: auto;
-		margin: 0mm;
+		margin: 10mm;
 	}
 	main {
 		margin: auto;
 		width: 100%;
+	}
+	@media print {
+		main {
+			margin: 0;
+		}
 	}
 </style>

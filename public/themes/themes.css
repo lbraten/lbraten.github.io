@@ -58,7 +58,7 @@
 
       /* Bakgrunn og paneler */
       --color-fill: 248, 249, 252;         /* bakgrunn (svært lys, litt blålig) */
-      --muted: 171, 152, 202;              /* borders / cards / historikklinje */
+      --muted: 134, 94, 197;              /* borders / cards / historikklinje */
 
       /* Aksenter (samme som dark) */
       --color: 143, 76, 255; /* aksent */
@@ -89,7 +89,7 @@
         rgb(var(--color-fill)); /* base */
 
       --color-bg-elevated: 255, 255, 255;          /* kort/paneler */
-      --color-bg-input: 255, 255, 255;             /* inputs/selects */
+      --color-bg-input: 202, 213, 254;             /* inputs/selects */
       --color-border: 189, 150, 255;
       --color-ring: 189, 150, 255;
       --color-ring-muted: 189, 150, 255;
@@ -280,9 +280,9 @@
 [data-theme="lond"] .exp-fade::after {
   background: linear-gradient(
     to top,
-    rgba(193, 185, 219, 0.35) 0%,
-    rgba(193, 185, 219, 0.12) 45%,
-    rgba(193, 185, 219, 0.00) 100%
+    rgba(159, 153, 182, 0.35) 0%,
+    rgba(159, 153, 182, 0.12) 45%,
+    rgba(159, 153, 182, 0.00) 100%
   );
 }
 

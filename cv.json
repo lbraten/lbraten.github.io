@@ -19,12 +19,12 @@
       {
         "network": "LinkedIn",
         "username": "leanderbraaten",
-        "url": "https://www.linkedin.com/in/leanderbraaten/"
+        "url": "https://linkedin.com/in/leanderbraaten/"
       },
       {
         "network": "Instagram",
         "username": "leanderbraaten",
-        "url": "https://www.instagram.com/leanderbraaten/"
+        "url": "https://instagram.com/leanderbraaten/"
       },
       {
         "network": "GitHub",
@@ -39,7 +39,7 @@
       "position": "IT Operations Apprentice",
       "location_type": "On site • 6 months",
       "location": "Oslo, Norway",
-      "url": "https://www.udir.no",
+      "url": "https://udir.no",
       "startDate": "2025-08-19",
       "endDate": null,
       "summary": "A proactive technical support professional with experience in system administration, AI tool development, and event technology management. Currently enhancing cloud expertise through Microsoft Azure certification (AZ-900).",
@@ -151,7 +151,7 @@
   "education": [
         {
       "institution": "Utdanningsdirektoratet",
-      "url": "https://www.udir.no",
+      "url": "https://udir.no",
       "area": "IT Operations • Apprenticeship • VG3",
       "studyType": "VG2",
       "startDate": "2025-08-19",
