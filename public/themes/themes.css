@@ -52,13 +52,13 @@
     }
     [data-theme="lond"] {
       /* Tekstfarger */
-      --color-text-base: 20, 24, 33;       /* hovedtekst (nær svart, men mykere) */
-      --color-text-muted: 100, 108, 125;   /* sekundær tekst (grå-blålig) */
+      --color-text-base: 17, 13, 22;       /* hovedtekst (nær svart, men mykere) */
+      --color-text-muted: 75, 70, 83;   /* sekundær tekst */
       --color-text-inverted: 250, 250, 252;/* invers (på knapper med mørk bakgrunn) */
 
       /* Bakgrunn og paneler */
       --color-fill: 248, 249, 252;         /* bakgrunn (svært lys, litt blålig) */
-      --muted: 184, 168, 210;              /* borders / cards / historikklinje */
+      --muted: 171, 152, 202;              /* borders / cards / historikklinje */
 
       /* Aksenter (samme som dark) */
       --color: 143, 76, 255; /* aksent */
