@@ -276,3 +276,21 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+[data-theme="lond"] .exp-fade::after {
+  background: linear-gradient(
+    to top,
+    rgba(193, 185, 219, 0.35) 0%,
+    rgba(193, 185, 219, 0.12) 45%,
+    rgba(193, 185, 219, 0.00) 100%
+  );
+}
+
+.dark [data-theme="lond"] .exp-fade::after {
+  background: linear-gradient(
+    to top,
+    rgba(1, 1, 2, 0.22) 0%,
+    rgba(30, 21, 48, 0.18) 45%,
+    rgba(0, 0, 0, 0.00) 100%
+  );
+}
