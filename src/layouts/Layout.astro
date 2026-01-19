@@ -101,7 +101,9 @@ const { image, summary, url, theme } = basics;
 				@apply border border-red-500/50 bg-red-500/5;
 			}
 			#hotkeypad [data-backdrop] {
-				@apply !bg-zinc-800 !opacity-80;
+				@apply !bg-zinc-800/60 !opacity-100 !backdrop-blur-md;
+				-webkit-backdrop-filter: blur(12px);
+				backdrop-filter: blur(12px);
 			}
 
 			@media print {
