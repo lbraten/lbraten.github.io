@@ -61,9 +61,9 @@
       --muted: 184, 168, 210;              /* borders / cards / historikklinje */
 
       /* Aksenter (samme som dark) */
-      --color: 175, 129, 255;              /* aksent */
-      --color-button-accent: 175, 129, 255;/* primærknapp */
-      --color-button-accent-hover: 115, 70, 215; /* mørkere lilla ved hover */
+      --color: 143, 76, 255; /* aksent */
+      --color-button-accent: 143, 76, 255; /* primærknapp */
+      --color-button-accent-hover: 124, 45, 255; /* mørkere lilla ved hover */
       --color-button-muted: 242, 244, 248; /* “kort”-bakgrunn/paneler i lys modus */
 
       /* Gradient-bakgrunn: subtil lys glød i lilla/blå */
@@ -189,7 +189,7 @@
 
       --color: 189, 150, 255; /* accentfarge */
       --color-button-accent: 189, 150, 255; /* fyllfargen til knapper, og til baren nederst på skjermen */
-      --color-button-accent-hover: 100, 50, 200; /* hover farge på knapper */
+      --color-button-accent-hover: 205, 176, 255; /* hover farge på knapper */
       --color-button-muted: 18, 28, 40; /* proskjektboksene */
 
       --bg-gradient:
