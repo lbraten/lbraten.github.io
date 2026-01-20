@@ -322,6 +322,16 @@
       ]
     },
     {
+      "name": "Astro",
+      "level": "",
+      "keywords": [
+        "Web Development",
+        "Frontend",
+        "Static Sites",
+        "Islands Architecture"
+      ]
+    },
+    {
       "name": "React",
       "level": "",
       "keywords": [
