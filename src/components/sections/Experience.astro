@@ -19,6 +19,58 @@ import Kotlin from "@/icons/kotlin.astro"
 import Flutter from "@/icons/flutter.astro"
 import Jira from "@/icons/Jira.astro";
 
+const formatDuration = (startDateStr: string, endDateStr?: string | null) => {
+  if (!startDateStr) {
+    return ""
+  }
+
+  const start = new Date(startDateStr)
+  const end = endDateStr ? new Date(endDateStr) : new Date()
+
+  let totalMonths = (end.getFullYear() - start.getFullYear()) * 12
+  totalMonths += end.getMonth() - start.getMonth()
+
+  if (end.getDate() < start.getDate()) {
+    totalMonths -= 1
+  }
+
+  totalMonths = Math.max(0, totalMonths)
+
+  if (totalMonths === 0) {
+    return "Less than 1 month"
+  }
+
+  const years = Math.floor(totalMonths / 12)
+  const months = totalMonths % 12
+
+  const yearLabel = years === 1 ? "year" : "years"
+  const monthLabel = months === 1 ? "month" : "months"
+
+  if (years > 0 && months > 0) {
+    return `${years} ${yearLabel} and ${months} ${monthLabel}`
+  }
+
+  if (years > 0) {
+    return `${years} ${yearLabel}`
+  }
+
+  return `${months} ${monthLabel}`
+}
+
+const formatLocationType = (locationType?: string, duration?: string) => {
+  const base = locationType ? locationType.split("•")[0].trim() : ""
+
+  if (!duration) {
+    return base
+  }
+
+  if (!base) {
+    return duration
+  }
+
+  return `${base} • ${duration}`
+}
+
 const SKILLS_ICONS: Record<string, any> = {
   HTML,
   CSS,
@@ -41,6 +93,12 @@ const SKILLS_ICONS: Record<string, any> = {
     {work.map(({ name, startDate, endDate, position, summary, responsibilities, achievements, url, skills, location, location_type }) => {
       const startYear = new Date(startDate).getFullYear()
       const endYear = endDate != null ? new Date(endDate).getFullYear() : "Present"
+      const duration = formatDuration(startDate, endDate)
+      const locationType = formatLocationType(location_type, duration)
+      const hasMoreDetails = Boolean(
+        (responsibilities && responsibilities.length) ||
+        (achievements && achievements.length)
+      )
 
       return (
         <li class="relative print:py-2">
@@ -68,15 +126,15 @@ const SKILLS_ICONS: Record<string, any> = {
                   </span>
                 </div>
               </h3>
-              {(location || location_type) && (
+              {(location || locationType) && (
                 <div class="text-xs text-skin-muted">
-                  {location} {location && location_type && '-'} {location_type}
+                  {location} {location && locationType && '-'} {locationType}
                 </div>
               )}
               <div class="mt-4  print:gap-0 flex flex-col gap-4 print:text-xs text-sm" x-data="{ expanded: false }">
                 {summary && (
                   <div class="flex flex-col gap-1">
-                    <h4>Summary:</h4>
+                    {hasMoreDetails && <h4>Summary:</h4>}
                     <ul class="text-skin-muted [&>li]:ml-4 flex list-disc flex-col gap-2">
                       {Array.isArray(summary) ? (
                         summary.map(item => (
@@ -113,25 +171,28 @@ const SKILLS_ICONS: Record<string, any> = {
                   </div>
                 )}
                 </div>
+                )}
                 
-                <button @click="expanded = ! expanded" class="print:hidden group/more w-fit cursor-pointer items-center justify-center gap-1.5 text-xs underline text-skin-muted transition-all hover:text-skin-base flex">
-                  <span x-text="expanded ? 'Show less' : 'Show more'">Show more</span>
-                  <svg class="w-4 h-4 group-hover/more:translate-y-0.5 duration-200 ease-out" :class="{ 'rotate-180': expanded }" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
-                </button>
+                {hasMoreDetails && (
+                  <button @click="expanded = ! expanded" class="print:hidden group/more w-fit cursor-pointer items-center justify-center gap-1.5 text-xs underline text-skin-muted transition-all hover:text-skin-base flex">
+                    <span x-text="expanded ? 'Show less' : 'Show more'">Show more</span>
+                    <svg class="w-4 h-4 group-hover/more:translate-y-0.5 duration-200 ease-out" :class="{ 'rotate-180': expanded }" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                  </button>
+                )}
 
-
-                <ul class="flex print:hidden flex-wrap gap-2" aria-label="Technologies used">
-                  {skills && skills.map(skill => {
-                    const iconName = skill === "Next.js" ? "Next" : skill
-                    const Icon = SKILLS_ICONS[iconName]
-                    return (
-                      <li class="bg-skin-button-accent/20 border-skin-hue/20 text-skin-hue print:p-0 print:bg-transparent print:text-zinc-800 flex gap-1 items-center border-solid print:border-none border rounded-md px-2 py-0.5 text-xs">
-                        {Icon && <Icon />} <span>{skill}</span>
-                      </li>
-                    )
-                  })}
-                </ul>
-)}
+                {skills && skills.filter(skill => skill && skill.trim().length > 0).length > 0 && (
+                  <ul class="flex print:hidden flex-wrap gap-2" aria-label="Technologies used">
+                    {skills.filter(skill => skill && skill.trim().length > 0).map(skill => {
+                      const iconName = skill === "Next.js" ? "Next" : skill
+                      const Icon = SKILLS_ICONS[iconName]
+                      return (
+                        <li class="bg-skin-button-accent/20 border-skin-hue/20 text-skin-hue print:p-0 print:bg-transparent print:text-zinc-800 flex gap-1 items-center border-solid print:border-none border rounded-md px-2 py-0.5 text-xs">
+                          {Icon && <Icon />} <span>{skill}</span>
+                        </li>
+                      )
+                    })}
+                  </ul>
+                )}
               </div>
             </div>
         </div>
