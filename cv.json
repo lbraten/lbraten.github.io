@@ -433,7 +433,7 @@
       "github": "https://github.com/lbraten/AltKalkis"
     },
     {
-      "name": "Scam Detective",
+      "name": "ScaleSnap",
       "isActive": true,
       "description": "An interactive platform that helps users understand scams and avoid becoming victims. It offers concise summaries of common scams, explains how they work, and includes a podcast with practical tips for staying safe.",
       "highlights": [
@@ -441,8 +441,8 @@
         "Dark/Light mode with localstorage.",
         "A button to actually report a scam."
       ],
-      "url": "https://lbraten.github.io/Scam-Detective_website/",
-      "github": "https://github.com/lbraten/Scam-Detective_website/"
+      "url": "https://lbraten.github.io/ScaleSnap/",
+      "github": "https://github.com/lbraten/ScaleSnap/"
     },
         {
       "name": "The Waffle Stand",
