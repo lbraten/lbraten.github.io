@@ -435,11 +435,11 @@
     {
       "name": "ScaleSnap",
       "isActive": true,
-      "description": "An interactive platform that helps users understand scams and avoid becoming victims. It offers concise summaries of common scams, explains how they work, and includes a podcast with practical tips for staying safe.",
+      "description": "ScaleSnap is a responsive image measurement web app where users upload a photo, calibrate scale using a known real-world distance, and then tap or click anywhere to get accurate measurements directly on the image.",
       "highlights": [
-        "Collapsing header when scrolling.",
-        "Dark/Light mode with localstorage.",
-        "A button to actually report a scam."
+        "Two-step calibration: enter a known length and pick two reference points to convert pixels into real units.",
+        "Touch-accurate mobile measurement using pointer events and coordinate mapping so points land where you press.",
+        "Dual UI optimized for desktop and phone, with live segment labels and a running results list."
       ],
       "url": "https://lbraten.github.io/ScaleSnap/",
       "github": "https://github.com/lbraten/ScaleSnap/"
@@ -447,7 +447,7 @@
         {
       "name": "The Waffle Stand",
       "isActive": true,
-      "description": "A simple click-based waffle-shop simulator where you make waffles, set your prices, and try to keep customers from dipping the moment the numbers get too high. It’s all about managing your cash, juggling upgrades, and keeping the shop running without going broke.",
+      "description": "A simple click-based waffle-shop simulator where you make waffles, set your prices, and try to keep customers from dipping the moment the numbers get too high. It's all about managing your cash, juggling upgrades, and keeping the shop running without going broke.",
       "highlights": [
         "Dynamic pricing that affects your chances of actually selling anything.",
         "Upgrade system that boosts how many waffles you can produce at once.",
