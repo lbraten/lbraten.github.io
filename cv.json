@@ -455,18 +455,6 @@
       ],
       "url": "https://lbraten.github.io/Komponenteksperten/",
       "github": "https://github.com/lbraten/Komponenteksperten"
-    },
-    {
-      "name": "The Waffle Stand",
-      "isActive": true,
-      "description": "A simple click-based waffle-shop simulator where you make waffles, set your prices, and try to keep customers from dipping the moment the numbers get too high. It's all about managing your cash, juggling upgrades, and keeping the shop running without going broke.",
-      "highlights": [
-        "Dynamic pricing that affects your chances of actually selling anything.",
-        "Upgrade system that boosts how many waffles you can produce at once.",
-        "Real-time notifications that react to every sale, fail, and vibe shift in your shop."
-      ],
-      "url": "https://lbraten.github.io/Vaffelboden-spill/",
-      "github": "https://github.com/lbraten/Vaffelboden-spill/"
     }
   ]
 }
