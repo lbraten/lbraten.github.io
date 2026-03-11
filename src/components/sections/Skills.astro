@@ -25,6 +25,7 @@ import Premiere from "@/icons/Premiere.astro";
 import Illustrator from "@/icons/Illustrator.astro";
 import Photoshop from "@/icons/Photoshop.astro";
 import Astro1 from "@/icons/Astro1.astro";
+import MicrosoftFoundry from "@/icons/MicrosoftFoundry.astro";
 
 const SKILLS_ICONS: Record<string, any> = {
 	HTML,
@@ -51,14 +52,16 @@ const SKILLS_ICONS: Record<string, any> = {
 	Illustrator,
 	Photoshop,
 	Astro: Astro1,
+	MicrosoftFoundry,
 };
 ---
 
 <Section className={Astro.props.className} title="Skills">
 	<ul class="[&>li>svg]:text-skin-hue inline-flex flex-wrap gap-6 [&>li>svg]:size-5 [&>li]:text-sm">
 		{
-			skills.map(({ name }) => {
-				const iconName = name === "Next.js" ? "Next" : name;
+				skills.map(({ name }) => {
+					const iconName =
+						name === "Next.js" ? "Next" : name === "Microsoft Foundry" ? "MicrosoftFoundry" : name;
 				const Icon = SKILLS_ICONS[iconName];
 
 				return (

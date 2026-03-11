@@ -197,6 +197,24 @@
       "url": "https://learn.microsoft.com/en-us/credentials/certifications/azure-fundamentals/?practice-assessment-type=certification"
     }
   ],
+  "courses": [
+    {
+      "name": "Microsoft Applied Skills: Azure AI Foundry (AI-3016)",
+      "date": "2026-03-11",
+      "issuer": "Microsoft",
+      "url": "https://learn.microsoft.com/en-us/credentials/applied-skills/",
+      "highlights": [
+        "Evaluated generative AI performance in Azure AI Foundry.",
+        "Implemented a responsible generative AI solution.",
+        "Fine-tuned a language model in Azure AI Foundry.",
+        "Built a RAG solution with private data.",
+        "Used prompt flow for LLM app development.",
+        "Built an AI app with the Azure AI Foundry SDK.",
+        "Selected and deployed models from the model catalog.",
+        "Planned and prepared AI solutions on Azure."
+      ]
+    }
+  ],
 
   "skills": [
     {
@@ -291,6 +309,15 @@
         "Enterprise-ready"
       ]
     },
+        {
+          "name": "Microsoft Foundry",
+          "level": "",
+          "keywords": [
+            "AI platform",
+            "Model catalog",
+            "Responsible AI"
+          ]
+        },
     {
       "name": "Git",
       "level": "",

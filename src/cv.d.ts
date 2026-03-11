@@ -5,6 +5,7 @@ export interface CV {
   education: Array<Education>;
   awards: Array<Awards>;
   certificates: Array<Certificates>;
+  courses: Array<Courses>;
   publications: Array<Publications>;
   skills: Array<Skills>;
   languages: Array<Languages>;
@@ -79,6 +80,14 @@ interface Certificates {
   date: DateStr;
   issuer: string;
   url: string;
+}
+
+interface Courses {
+  name: string;
+  date: DateStr;
+  issuer: string;
+  url: string;
+  highlights: Highlight;
 }
 
 interface Publications {

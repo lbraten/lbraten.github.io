@@ -1,8 +1,7 @@
 ---
 import Section from "../Section.astro";
 
-import { education } from "@cv";
-import { certificates } from "@cv";
+import { education, certificates, courses } from "@cv";
 ---
 
 <Section className={Astro.props.className} title="Education">
@@ -58,6 +57,42 @@ import { certificates } from "@cv";
 									</h3>
 									<div class="text-sm text-skin-muted">{issuer}</div>
 									<time class="right-0 top-0 text-xs text-skin-muted md:absolute md:block">{certificateYear}</time>
+								</div>
+							</div>
+						);
+					})}
+				</ul>
+			</>
+		)
+	}
+
+	{
+		courses.length > 0 && (
+			<>
+				<h4>Courses</h4>
+				<ul class="space-y-4 py-3 print:space-y-0">
+					{courses.map(({ name, date, issuer, url, highlights }) => {
+						const courseYear = new Date(date).getFullYear();
+						return (
+							<div class="flex items-baseline">
+								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" class="mr-2 hidden h-5 w-5 self-start md:inline-block print:hidden">
+									<path fill="currentColor" d="M192 448C245 448 288 491 288 544C288 561.7 273.7 576 256 576L32 576C14.3 576 0 561.7 0 544C0 491 43 448 96 448L192 448zM544 96C579.3 96 608 124.7 608 160L608 448C608 481.1 582.8 508.4 550.5 511.7L544 512L332.9 512C327.8 487.8 316.6 465.9 300.8 448L352 448L352 416C352 398.3 366.3 384 384 384L480 384C497.7 384 512 398.3 512 416L512 448L544 448L544 160L192 160L192 217.3C177.2 211.3 161 208 144 208C138.6 208 133.2 208.3 128 209L128 160C128 124.7 156.7 96 192 96L544 96zM144 416C99.8 416 64 380.2 64 336C64 291.8 99.8 256 144 256C188.2 256 224 291.8 224 336C224 380.2 188.2 416 144 416z" />
+								</svg>
+								<div class="relative w-full items-baseline justify-between gap-2">
+									<h3 class="mr-6 items-baseline gap-x-2 gap-y-0.5 font-medium">
+										<a class="hover:text-skin-hue group flex items-center gap-[6px] text-skin-base decoration-dotted underline-offset-[5px] hover:underline" href={url} target="_blank">
+											{name}
+										</a>
+									</h3>
+									<div class="text-sm text-skin-muted">{issuer}</div>
+									<time class="right-0 top-0 text-xs text-skin-muted md:absolute md:block">{courseYear}</time>
+									{highlights?.length > 0 && (
+										<ul class="mt-2 list-disc pl-6 text-sm text-skin-muted">
+											{highlights.map((item) => (
+												<li>{item}</li>
+											))}
+										</ul>
+									)}
 								</div>
 							</div>
 						);
