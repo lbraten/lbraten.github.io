@@ -409,25 +409,13 @@
   ],
   "projects": [
     {
-      "name": "The Component Expert",
-      "isActive": true,
-      "description": "An interactive learning platform designed to help users understand computer components and how they work together. It offers clear explanations, visual interaction, and a quiz to reinforce knowledge.",
-      "highlights": [
-        "Interactive component images with zoom feature",
-        "Includes a quiz for knowledge reinforcement",
-        "Simple navigation for easy exploration"
-      ],
-      "url": "https://lbraten.github.io/Komponenteksperten/",
-      "github": "https://github.com/lbraten/Komponenteksperten"
-    },
-    {
       "name": "AltKalkis",
       "isActive": true,
-      "description": "An interactive platform designed to help users calculate things quick and easy.",
+      "description": "AltKalkis is a customizable all-in-one utility dashboard that combines everyday calculators with live data widgets, so users can do quick math, track useful info, and plan daily tasks from one responsive interface.",
       "highlights": [
-        "Buildt inn calculator.",
-        "Age and time between dates.",
-        "'This day's history."
+        "Modular card layout where users can show or hide tools like percent, salary, age, date/time difference, timezone, and currency calculators.",
+        "Live integrations for weather trends, market data, NRK headlines, and Ruter/Entur route planning with map preview.",
+        "Extra productivity widgets including countdown timer, quote feed, historical events, holiday overview, and a HEX-to-palette color tool."
       ],
       "url": "https://lbraten.github.io/AltKalkis/",
       "github": "https://github.com/lbraten/AltKalkis"
@@ -444,7 +432,31 @@
       "url": "https://lbraten.github.io/ScaleSnap/",
       "github": "https://github.com/lbraten/ScaleSnap/"
     },
-        {
+    {
+      "name": "Lavendra Frame",
+      "isActive": true,
+      "description": "Lavendra Frame is a browser-based video editor that runs fully client-side with FFmpeg WebAssembly, so users can import clips, edit on a timeline, and export directly from the browser without uploading files to a server.",
+      "highlights": [
+        "Multi-track timeline editing with split, move, delete, and keyboard shortcuts for fast clip arrangement.",
+        "Built-in crop, scale, and audio controls (mute, gain/volume) with live preview tools including audio level meters.",
+        "Flexible export pipeline with MP4/WebM/GIF output, CRF quality mode, and target-size compression with retry limits."
+      ],
+      "url": "https://lbraten.github.io/Lavendra-Frame/",
+      "github": "https://github.com/lbraten/Lavendra-Frame/"
+    },
+    {
+      "name": "The Component Expert",
+      "isActive": true,
+      "description": "An interactive learning platform designed to help users understand computer components and how they work together. It offers clear explanations, visual interaction, and a quiz to reinforce knowledge.",
+      "highlights": [
+        "Interactive component images with zoom feature",
+        "Includes a quiz for knowledge reinforcement",
+        "Simple navigation for easy exploration"
+      ],
+      "url": "https://lbraten.github.io/Komponenteksperten/",
+      "github": "https://github.com/lbraten/Komponenteksperten"
+    },
+    {
       "name": "The Waffle Stand",
       "isActive": true,
       "description": "A simple click-based waffle-shop simulator where you make waffles, set your prices, and try to keep customers from dipping the moment the numbers get too high. It's all about managing your cash, juggling upgrades, and keeping the shop running without going broke.",
