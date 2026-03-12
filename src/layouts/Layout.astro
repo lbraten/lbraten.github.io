@@ -41,7 +41,7 @@ const { image, summary, url, theme } = basics;
 	</head>
 	<body data-theme={theme} class="relative bg-tri">
 		<div class="absolute top-0 -z-10 h-full w-full print:hidden">
-			<div class="bg-skin-hue/10 absolute bottom-auto left-[20%] right-auto top-0 h-[200px] w-[200px] -translate-x-[30%] translate-y-[20%] rounded-full blur-[80px] invert-0 dark:bg-white/5"></div>
+			<div class="theme-ambient-orb"></div>
 		</div>
 		<slot />
 		<style is:global>
@@ -119,6 +119,27 @@ const { image, summary, url, theme } = basics;
 				@apply !bg-zinc-800/60 !opacity-100 !backdrop-blur-md;
 				-webkit-backdrop-filter: blur(12px);
 				backdrop-filter: blur(12px);
+			}
+
+			.theme-ambient-orb {
+				position: absolute;
+				top: 0;
+				left: 14%;
+				height: 220px;
+				width: 220px;
+				border-radius: 9999px;
+				background: rgb(var(--color) / 0.08);
+				filter: blur(90px);
+				transform: translate(-36%, 26%);
+				transition:
+					transform 700ms cubic-bezier(0.22, 1, 0.36, 1),
+					background-color 700ms cubic-bezier(0.22, 1, 0.36, 1);
+			}
+
+			html.dark .theme-ambient-orb {
+				left: 20%;
+				background: rgb(255 255 255 / 0.05);
+				transform: translate(-30%, 20%);
 			}
 
 			@media print {
