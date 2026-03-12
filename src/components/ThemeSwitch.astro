@@ -40,10 +40,15 @@ block w-full rounded-md border-0 py-1.5 pl-3 pr-10 text-[rgb(var(--color-text-ba
 		}
 
 		function updateTheme(value: string) {
+			document.documentElement.classList.add("theme-transition");
 			const theme = value === "system" ? systemTheme : value;
 			document.documentElement.classList.remove("light", "dark");
 			document.documentElement.classList.add(theme);
 			localStorage.setItem("theme", value);
+
+			window.setTimeout(() => {
+				document.documentElement.classList.remove("theme-transition");
+			}, 400);
 		}
 
 		updateTheme(select.value);
