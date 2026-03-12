@@ -194,7 +194,9 @@
       "name": "AZ-900 (Not completed yet)",
       "date": "2026-05-01",
       "issuer": "Microsoft Certified: Azure Fundamentals",
-      "url": "https://learn.microsoft.com/en-us/credentials/certifications/azure-fundamentals/?practice-assessment-type=certification"
+      "url": "https://learn.microsoft.com/en-us/credentials/certifications/azure-fundamentals/?practice-assessment-type=certification",
+      "diplomaUrl": "",
+      "diplomaLabel": ""
     }
   ],
   "courses": [
@@ -203,6 +205,8 @@
       "date": "2026-03-11",
       "issuer": "Microsoft",
       "url": "https://learn.microsoft.com/en-us/credentials/applied-skills/",
+      "diplomaUrl": "/diplomas/ai-3016-diploma.pdf",
+      "diplomaLabel": "Last ned diplom",
       "highlights": [
         "Evaluated generative AI performance in Azure AI Foundry.",
         "Implemented a responsible generative AI solution.",

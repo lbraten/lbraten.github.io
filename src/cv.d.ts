@@ -80,6 +80,8 @@ interface Certificates {
   date: DateStr;
   issuer: string;
   url: string;
+  diplomaUrl?: string;
+  diplomaLabel?: string;
 }
 
 interface Courses {
@@ -88,6 +90,8 @@ interface Courses {
   issuer: string;
   url: string;
   highlights: Highlight;
+  diplomaUrl?: string;
+  diplomaLabel?: string;
 }
 
 interface Publications {

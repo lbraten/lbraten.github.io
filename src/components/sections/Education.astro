@@ -39,7 +39,7 @@ import { education, certificates, courses } from "@cv";
 			<>
 				<h4>Certificates</h4>
 				<ul class="space-y-4 py-3 print:space-y-0">
-					{certificates.map(({ name, date, issuer, url }) => {
+					{certificates.map(({ name, date, issuer, url, diplomaUrl, diplomaLabel }) => {
 						const certificateYear = new Date(date).getFullYear();
 						return (
 							<div class="flex items-baseline">
@@ -57,6 +57,16 @@ import { education, certificates, courses } from "@cv";
 									</h3>
 									<div class="text-sm text-skin-muted">{issuer}</div>
 									<time class="right-0 top-0 text-xs text-skin-muted md:absolute md:block">{certificateYear}</time>
+									{diplomaUrl && (
+										<a href={diplomaUrl} download class="mt-2 inline-flex w-fit items-center gap-1 text-xs text-skin-hue underline decoration-dotted underline-offset-4 hover:text-skin-base" aria-label={`Download diploma for ${name}`}>
+											<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+												<path d="M12 3v12" />
+												<path d="m7 10 5 5 5-5" />
+												<path d="M5 21h14" />
+											</svg>
+											<span>{diplomaLabel ?? "Download diploma"}</span>
+										</a>
+									)}
 								</div>
 							</div>
 						);
@@ -71,7 +81,7 @@ import { education, certificates, courses } from "@cv";
 			<>
 				<h4>Courses</h4>
 				<ul class="space-y-4 py-3 print:space-y-0">
-					{courses.map(({ name, date, issuer, url, highlights }) => {
+					{courses.map(({ name, date, issuer, url, highlights, diplomaUrl, diplomaLabel }) => {
 						const courseYear = new Date(date).getFullYear();
 						return (
 							<div class="flex items-baseline">
@@ -86,6 +96,16 @@ import { education, certificates, courses } from "@cv";
 									</h3>
 									<div class="text-sm text-skin-muted">{issuer}</div>
 									<time class="right-0 top-0 text-xs text-skin-muted md:absolute md:block">{courseYear}</time>
+									{diplomaUrl && (
+										<a href={diplomaUrl} download class="mt-2 inline-flex w-fit items-center gap-1 text-xs text-skin-hue underline decoration-dotted underline-offset-4 hover:text-skin-base" aria-label={`Download diploma for ${name}`}>
+											<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+												<path d="M12 3v12" />
+												<path d="m7 10 5 5 5-5" />
+												<path d="M5 21h14" />
+											</svg>
+											<span>{diplomaLabel ?? "Download diploma"}</span>
+										</a>
+									)}
 									{highlights?.length > 0 && (
 										<ul class="mt-2 list-disc pl-6 text-sm text-skin-muted">
 											{highlights.map((item) => (
