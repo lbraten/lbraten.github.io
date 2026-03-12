@@ -9,7 +9,6 @@ import Projects from "@/components/sections/Projects.astro";
 import Skills from "@/components/sections/Skills.astro";
 import Tail from "@/components/sections/Tail.astro";
 import KeyboardManager from "@/components/KeyboardManager.astro";
-import ThemeSwitch from "@/components/ThemeSwitch.astro";
 
 import { basics } from "@cv";
 const { name, label } = basics;
@@ -17,14 +16,13 @@ const { name, label } = basics;
 
 <Layout title={`Portfolio - ${label}`}>
 	<main class="relative grid max-w-[84rem] gap-10 p-8 max-sm:py-16 md:grid-cols-12 md:p-16 xl:gap-20 print:max-w-none print:grid-cols-6 print:gap-4">
-		<div class="space-y-6 md:col-span-5 print:col-span-2 print:space-y-4">
+		<div class="space-y-6 md:col-span-6 print:col-span-2 print:space-y-4">
 			<Hero />
-			<ThemeSwitch />
 			<About />
 			<Skills className="print:hidden" />
 			<Projects className="print:hidden" />
 		</div>
-		<div class="space-y-12 md:col-span-7 print:col-span-4 print:space-y-6">
+		<div class="space-y-12 md:col-span-6 print:col-span-4 print:space-y-6">
 			<Experience className="print:col-span-3" />
 			<Education className="order-first" />
 		</div>

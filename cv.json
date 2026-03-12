@@ -425,11 +425,11 @@
     {
       "name": "AltKalkis",
       "isActive": true,
-      "description": "AltKalkis is a customizable all-in-one utility dashboard that combines everyday calculators with live data widgets, so users can do quick math, track useful info, and plan daily tasks from one responsive interface.",
+      "description": "AltKalkis is a customizable utility dashboard that combines calculators and live widgets in one responsive view.",
       "highlights": [
-        "Modular card layout where users can show or hide tools like percent, salary, age, date/time difference, timezone, and currency calculators.",
-        "Live integrations for weather trends, market data, NRK headlines, and Ruter/Entur route planning with map preview.",
-        "Extra productivity widgets including countdown timer, quote feed, historical events, holiday overview, and a HEX-to-palette color tool."
+        "Modular cards with toggleable tools like percent, salary, age, timezone, and currency calculators.",
+        "Live widgets for weather, market data, NRK news, and Ruter/Entur trip planning.",
+        "Extra tools: countdown timer, quote feed, holidays, historical events, and color palette helper."
       ],
       "url": "https://lbraten.github.io/AltKalkis/",
       "github": "https://github.com/lbraten/AltKalkis"
@@ -437,11 +437,11 @@
     {
       "name": "ScaleSnap",
       "isActive": true,
-      "description": "ScaleSnap is a responsive image measurement web app where users upload a photo, calibrate scale using a known real-world distance, and then tap or click anywhere to get accurate measurements directly on the image.",
+      "description": "ScaleSnap is a web app for measuring distances on images after quick scale calibration.",
       "highlights": [
-        "Two-step calibration: enter a known length and pick two reference points to convert pixels into real units.",
-        "Touch-accurate mobile measurement using pointer events and coordinate mapping so points land where you press.",
-        "Dual UI optimized for desktop and phone, with live segment labels and a running results list."
+        "Two-step calibration converts pixels to real units from a known reference length.",
+        "Touch-accurate measurement on mobile and desktop with precise point mapping.",
+        "Live segment labels and running measurement list for quick comparisons."
       ],
       "url": "https://lbraten.github.io/ScaleSnap/",
       "github": "https://github.com/lbraten/ScaleSnap/"
@@ -449,11 +449,11 @@
     {
       "name": "Lavendra Frame",
       "isActive": true,
-      "description": "Lavendra Frame is a browser-based video editor that runs fully client-side with FFmpeg WebAssembly, so users can import clips, edit on a timeline, and export directly from the browser without uploading files to a server.",
+      "description": "Lavendra Frame is a browser-based video editor with timeline tools and local export via FFmpeg WebAssembly.",
       "highlights": [
-        "Multi-track timeline editing with split, move, delete, and keyboard shortcuts for fast clip arrangement.",
-        "Built-in crop, scale, and audio controls (mute, gain/volume) with live preview tools including audio level meters.",
-        "Flexible export pipeline with MP4/WebM/GIF output, CRF quality mode, and target-size compression with retry limits."
+        "Multi-track timeline editing with split, move, delete, and keyboard shortcuts.",
+        "Built-in crop, scale, and audio controls with live preview and level meters.",
+        "Export to MP4, WebM, or GIF with quality tuning and target-size compression."
       ],
       "url": "https://lbraten.github.io/Lavendra-Frame/",
       "github": "https://github.com/lbraten/Lavendra-Frame/"

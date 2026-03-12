@@ -8,6 +8,7 @@ import LinkedIn from "@/icons/LinkedIn.astro";
 import Instagram from "@/icons/Instagram.astro";
 import GitHub from "@/icons/GitHub.astro";
 import WorldMap from "@/icons/WorldMap.astro";
+import ThemeSwitch from "@/components/ThemeSwitch.astro";
 import type { SocialIcon } from "@/types";
 
 const { name, label, image, location, profiles, phone, email } = basics;
@@ -85,6 +86,9 @@ const printInfo = [email, phone, linkedUrl].filter(Boolean).join(" • ");
 						<path d="M7 9a2 2 0 1 1 2 -2v10a2 2 0 1 1 -2 -2h10a2 2 0 1 1 -2 2v-10a2 2 0 1 1 2 2h-10"></path>
 					</svg>
 				</div>
+				<div class="ml-auto flex items-center gap-1">
+					<ThemeSwitch />
+				</div>
 			</footer>
 		</div>
 		<figure class="print:hidden w-fit relative">
@@ -101,7 +105,7 @@ const printInfo = [email, phone, linkedUrl].filter(Boolean).join(" • ");
 
 <style>
 	.info {
-		@apply flex flex-col gap-1 pr-8 print:gap-0 print:pr-0;
+		@apply flex flex-col gap-1 print:gap-0 print:pr-0;
 	}
 
 	h1 {

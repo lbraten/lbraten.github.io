@@ -1,19 +1,10 @@
----
-import Theme from "@/icons/themeSwitch.astro";
----
-
 <div class="no-print inline-flex items-center">
-	<!-- <div class="flex items-center gap-1">
-		<Theme />
-		<select name="themeSwitch" id="themeSwitch" class="block w-full rounded-md border-0 py-1.5 pl-3 pr-10 text-gray-900 dark:text-gray-100 dark:ring-gray-700 sm:text-sm sm:leading-6">
-			<option value="system">System</option>
-			<option value="dark">Dark</option>
-			<option value="light">Light</option>
-		</select>
-	</div> -->
+	<script id="lottie-web-script" src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.12.2/lottie.min.js"></script>
 
 	<div class="group/theme flex items-center gap-2">
-		<label for="themeSwitch" class="flex items-center gap-1 text-sm font-medium leading-6 text-skin-base transition-transform ease-in-out group-hover/theme:rotate-45"> <Theme /></label>
+		<label for="themeSwitch" class="flex items-center gap-1 text-sm font-medium leading-6 text-skin-base">
+			<span id="themeSwitchIcon" class="theme-switch-icon" aria-hidden="true"></span>
+		</label>
 		<select id="themeSwitch" name="themeSwitch" style="background-color: rgb(var(--color-bg-input) / 0.55);" class="
 block w-full rounded-md border-0 py-1.5 pl-3 pr-10 text-[rgb(var(--color-text-base))] ring-1 ring-inset ring-[rgb(var(--color-ring-muted))] focus:ring-2 focus:ring-[rgb(var(--color-ring))] sm:text-sm sm:leading-6 appearance-none">
 			<option value="system">System</option>
@@ -26,36 +17,184 @@ block w-full rounded-md border-0 py-1.5 pl-3 pr-10 text-[rgb(var(--color-text-ba
 		:global(.dark) {
 			color-scheme: dark;
 		}
+
+		:global(.theme-switch-icon) {
+			position: relative;
+			display: inline-flex;
+			height: 24px;
+			width: 24px;
+			color: rgb(var(--color-text-base));
+			transition: color 400ms ease;
+		}
+
+		:global(.theme-switch-icon > svg) {
+			height: 24px !important;
+			width: 24px !important;
+			overflow: visible;
+			display: block;
+		}
+
+		:global(.theme-switch-icon svg path),
+		:global(.theme-switch-icon svg circle),
+		:global(.theme-switch-icon svg line),
+		:global(.theme-switch-icon svg polygon),
+		:global(.theme-switch-icon svg polyline),
+		:global(.theme-switch-icon svg rect),
+		:global(.theme-switch-icon svg ellipse) {
+			stroke: currentColor !important;
+			fill: currentColor !important;
+			transition: stroke 400ms ease, fill 400ms ease;
+		}
 	</style>
 
 	<script>
-		const select = document.getElementById("themeSwitch") as HTMLSelectElement;
-		const theme = localStorage.getItem("theme");
-		const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+		type LottiePlayer = {
+			goToAndStop: (value: number, isFrame?: boolean) => void;
+			playSegments: (segments: [number, number] | number[], forceFlag?: boolean) => void;
+			addEventListener: (eventName: string, handler: () => void) => void;
+			removeEventListener: (eventName: string, handler: () => void) => void;
+			destroy: () => void;
+		};
 
-		if (theme !== null) {
-			select.value = theme;
-		} else {
-			select.value = systemTheme;
+		type LottieGlobal = {
+			loadAnimation: (options: Record<string, unknown>) => LottiePlayer;
+		};
+
+		const select = document.getElementById("themeSwitch") as HTMLSelectElement;
+		const themeIcon = document.getElementById("themeSwitchIcon") as HTMLSpanElement;
+		const storedTheme = localStorage.getItem("theme");
+		const systemThemeQuery = window.matchMedia("(prefers-color-scheme: dark)");
+		const LIGHT_FRAME = 0;
+		const DARK_FRAME = 14;
+
+		let currentThemeMode: "light" | "dark" = "light";
+		let themeLottie: LottiePlayer | null = null;
+		let lottieCompleteHandler: (() => void) | null = null;
+
+		const resolveTheme = (value: string) => (value === "system" ? (systemThemeQuery.matches ? "dark" : "light") : value);
+
+		function setIconFrame(themeMode: "light" | "dark") {
+			if (!themeLottie) {
+				return;
+			}
+
+			themeLottie.goToAndStop(themeMode === "dark" ? DARK_FRAME : LIGHT_FRAME, true);
 		}
 
-		function updateTheme(value: string) {
+		function animateIcon(themeMode: "light" | "dark") {
+			if (!themeLottie) {
+				return;
+			}
+
+			if (lottieCompleteHandler) {
+				themeLottie.removeEventListener("complete", lottieCompleteHandler);
+				lottieCompleteHandler = null;
+			}
+
+			const targetFrame = themeMode === "dark" ? DARK_FRAME : LIGHT_FRAME;
+			const segment: [number, number] = themeMode === "dark" ? [LIGHT_FRAME, DARK_FRAME] : [DARK_FRAME, LIGHT_FRAME];
+
+			const onComplete = () => {
+				if (!themeLottie) {
+					return;
+				}
+
+				themeLottie.goToAndStop(targetFrame, true);
+				themeLottie.removeEventListener("complete", onComplete);
+				lottieCompleteHandler = null;
+			};
+
+			lottieCompleteHandler = onComplete;
+			themeLottie.addEventListener("complete", onComplete);
+			themeLottie.playSegments(segment, true);
+		}
+
+		function initLottie(initialTheme: "light" | "dark") {
+			if (!themeIcon) {
+				return;
+			}
+
+			const lottie = (window as unknown as { lottie?: LottieGlobal }).lottie;
+			if (!lottie) {
+				return;
+			}
+
+			themeLottie?.destroy();
+			themeLottie = lottie.loadAnimation({
+				container: themeIcon,
+				renderer: "svg",
+				loop: false,
+				autoplay: false,
+				path: "/lottie/day-night-weather.json",
+			});
+
+			window.setTimeout(() => {
+				setIconFrame(initialTheme);
+			}, 0);
+		}
+
+		function syncIcon(themeMode: string, animate: boolean) {
+			if (!themeIcon || !themeLottie) {
+				return;
+			}
+
+			const resolved = themeMode === "dark" ? "dark" : "light";
+
+			if (resolved === currentThemeMode) {
+				setIconFrame(resolved);
+				return;
+			}
+
+			if (animate) {
+				animateIcon(resolved);
+			} else {
+				setIconFrame(resolved);
+			}
+
+			currentThemeMode = resolved;
+		}
+
+		if (storedTheme !== null) {
+			select.value = storedTheme;
+		} else {
+			select.value = resolveTheme("system");
+		}
+
+		currentThemeMode = resolveTheme(select.value) === "dark" ? "dark" : "light";
+
+		const lottieScript = document.getElementById("lottie-web-script") as HTMLScriptElement | null;
+		if ((window as unknown as { lottie?: LottieGlobal }).lottie) {
+			initLottie(currentThemeMode);
+		} else {
+			lottieScript?.addEventListener("load", () => initLottie(currentThemeMode), { once: true });
+		}
+
+		function updateTheme(value: string, animate = true) {
 			document.documentElement.classList.add("theme-transition");
-			const theme = value === "system" ? systemTheme : value;
+			const resolvedTheme = resolveTheme(value);
 			document.documentElement.classList.remove("light", "dark");
-			document.documentElement.classList.add(theme);
+			document.documentElement.classList.add(resolvedTheme);
 			localStorage.setItem("theme", value);
+			syncIcon(resolvedTheme, animate);
 
 			window.setTimeout(() => {
 				document.documentElement.classList.remove("theme-transition");
 			}, 400);
 		}
 
-		updateTheme(select.value);
+		updateTheme(select.value, false);
 
 		select.addEventListener("change", (event: Event) => {
 			const select = event.target as HTMLSelectElement;
 			updateTheme(select.value);
+		});
+
+		systemThemeQuery.addEventListener("change", () => {
+			if (select.value !== "system") {
+				return;
+			}
+
+			updateTheme("system");
 		});
 	</script>
 </div>
