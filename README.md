@@ -1,48 +1,64 @@
-# Personal Subdomain Hub
+# My Personal Website
 
-Modern, responsive landing page for presenting your personal subdomain ecosystem to recruiters, clients, and collaborators.
+This is my personal website and project front page. I use it to share who I am, what I am working on right now, and how people can reach me.
 
-Built with Astro as the primary framework and React only for the interactive theme toggle.
+I built it with Astro, and I only use React for the theme toggle.
 
 ## Features
 
-- Hero section with clear professional positioning
-- What I do section
-- Project and subdomain cards
-- Contact section with direct call to action
-- Dark and light mode toggle with local preference persistence
-- Glassmorphism styling with a purple visual identity
+- Hero section with my current profile and direction
+- Current role, impact, and focus sections
+- Selected project cards with live demo and GitHub links
+- Contact section with direct ways to reach me
+- Dark/light mode toggle that remembers my choice
+- Purple glassmorphism-inspired visual style
 - Responsive layout for desktop, tablet, and mobile
-- Accessibility-minded semantic structure and reduced-motion support
+- Accessibility-friendly structure with reduced-motion support
 
 ## Local Development
 
-Install dependencies and start Astro:
+If I want to run this locally:
 
 ```bash
 npm install
 npm run dev
 ```
 
-Build static output:
+If I want a production build:
 
 ```bash
 npm run build
 npm run preview
 ```
 
+## GitHub Pages Deployment
+
+I deploy this site with GitHub Actions using `.github/workflows/deploy-pages.yml`.
+
+It will:
+
+- Run on push to `main`
+- Install dependencies with `npm ci`
+- Build with `npm run build`
+- Deploy `dist/` to GitHub Pages
+
+One-time setup in repository settings:
+
+1. Go to **Settings -> Pages**
+2. Set **Source** to **GitHub Actions**
+
 ## Customize Content
 
-Update these values in `src/pages/index.astro`:
+When I want to update content, I edit `src/pages/index.astro`:
 
 - Name and intro text in the hero section
-- Subdomain URLs under the projects section
+- Project URLs under the projects section
 - Contact email and social links
 
 ## File Structure
 
-- `src/pages/index.astro` Main page structure and content
+- `src/pages/index.astro` Main page content and structure
 - `src/layouts/BaseLayout.astro` Shared layout and global scripts
-- `src/components/ThemeToggle.tsx` React interactive component
-- `src/styles/global.css` Global visual design and responsive behavior
-- `astro.config.mjs` Astro configuration with static output
+- `src/components/ThemeToggle.tsx` Theme toggle component
+- `src/styles/global.css` Global styling and responsive behavior
+- `astro.config.mjs` Astro setup for static output
