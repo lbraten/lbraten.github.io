@@ -1,0 +1,126 @@
+---
+import "../styles/global.css";
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "Leander Braten | IT Operations, AI Tooling, and Projects",
+  description = "Personal website of Leander Braten with current role, impact, projects, and contact details.",
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <slot />
+    <script>
+      const revealElements = document.querySelectorAll(".reveal");
+      const orbs = document.querySelectorAll<HTMLElement>(".bg-orb");
+      const navLinks = Array.from(document.querySelectorAll<HTMLAnchorElement>(".main-nav a[href^='#']"));
+      const navSections = navLinks
+        .map((link) => {
+          const target = link.getAttribute("href");
+          if (!target) return null;
+          return document.querySelector<HTMLElement>(target);
+        })
+        .filter((section): section is HTMLElement => Boolean(section));
+
+      const updateActiveNav = () => {
+        if (!navSections.length || !navLinks.length) return;
+
+        const triggerLine = window.innerHeight * 0.36;
+        const nearPageBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 6;
+        let activeId = navSections[0].id;
+
+        if (nearPageBottom) {
+          activeId = navSections[navSections.length - 1].id;
+        } else {
+          navSections.forEach((section) => {
+            if (section.getBoundingClientRect().top <= triggerLine) {
+              activeId = section.id;
+            }
+          });
+        }
+
+        navLinks.forEach((link) => {
+          link.classList.toggle("is-active", link.getAttribute("href") === `#${activeId}`);
+        });
+      };
+
+      const observer = new IntersectionObserver(
+        (entries, obs) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            entry.target.classList.add("is-visible");
+            obs.unobserve(entry.target);
+          });
+        },
+        { threshold: 0.18, rootMargin: "0px 0px -40px 0px" }
+      );
+
+      revealElements.forEach((element) => observer.observe(element));
+
+      let currentScrollY = window.scrollY || 0;
+      let targetScrollY = currentScrollY;
+      let orbAnimationFrame = 0;
+
+      const updateOrbsOnScroll = (scrollY: number) => {
+
+        orbs.forEach((orb) => {
+          const speedY = Number(orb.dataset.speedY ?? "0.02");
+          const speedX = Number(orb.dataset.speedX ?? "0");
+          orb.style.setProperty("--orb-scroll", `${scrollY * speedY}px`);
+          orb.style.setProperty("--drift-x", `${scrollY * speedX}px`);
+        });
+
+        updateActiveNav();
+      };
+
+      const animateOrbs = () => {
+        const delta = targetScrollY - currentScrollY;
+        currentScrollY += delta * 0.085;
+
+        if (Math.abs(delta) < 0.2) {
+          currentScrollY = targetScrollY;
+        }
+
+        updateOrbsOnScroll(currentScrollY);
+
+        if (Math.abs(targetScrollY - currentScrollY) >= 0.2) {
+          orbAnimationFrame = window.requestAnimationFrame(animateOrbs);
+          return;
+        }
+
+        orbAnimationFrame = 0;
+      };
+
+      window.addEventListener(
+        "scroll",
+        () => {
+          targetScrollY = window.scrollY || 0;
+          if (orbAnimationFrame) return;
+          orbAnimationFrame = window.requestAnimationFrame(animateOrbs);
+        },
+        { passive: true }
+      );
+
+      updateOrbsOnScroll(currentScrollY);
+      updateActiveNav();
+    </script>
+  </body>
+</html>
